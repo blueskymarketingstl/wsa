@@ -17,100 +17,111 @@
     "title": "Brake Service & Repair",
     "description": "Brake Service & Repair in Weldon Spring and St. Charles, MO. Squealing, grinding, vibration, a soft pedal, or a brake warning light all deserve attention. We inspect brake pads, rotors, calipers, lines, and fluid to find the cause and explain your options.",
     "content": "<p class=\"lead\">Squealing, grinding, vibration, a soft pedal, or a brake warning light all deserve attention. We inspect brake pads, rotors, calipers, lines, and fluid to find the cause and explain your options.</p><h2>Why replace brake pads before they get too low?</h2><p>Brake pads are designed to wear as they help stop your vehicle. When the friction material wears too thin, stopping performance can suffer and metal components may contact the rotor. Catching wear early can protect the rotors and help avoid a more involved repair. Don’t wait for grinding to schedule an inspection.</p><h2>How we can help</h2><ul><li>Brake pad and rotor inspection</li><li>Pad and rotor replacement</li><li>Brake fluid inspection and service</li><li>Diagnosis of squeaks, pulling, and pedal changes</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>How do I know my brakes need attention?</summary><p>Squealing, grinding, pulling, vibration, or a change in pedal feel are reasons to schedule an inspection. A warning light or a sudden loss of braking needs prompt professional attention.</p></details><details><summary>Can I drive with grinding brakes?</summary><p>Grinding can indicate serious wear. Avoid continuing to drive if braking feels unsafe; arrange professional help or towing instead.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "brakes.webp",
+    "image": "faqs.webp",
     "eyebrow": "Stop confidently. Drive comfortably.",
     "parent": "auto-repair",
-    "keywords": "brakes squeak squealing grinding pads rotors stopping"
+    "keywords": "brakes squeak squealing grinding pads rotors stopping",
+    "imageAlt": "Technician inspecting a vehicle on a lift"
   },
   "suspension-steering": {
     "title": "Suspension & Steering",
     "description": "Suspension & Steering in Weldon Spring and St. Charles, MO. A bumpy ride, wandering steering, clunks, or uneven tire wear can point to worn suspension or steering components. We inspect the system so you can feel confident behind the wheel again.",
     "content": "<p class=\"lead\">A bumpy ride, wandering steering, clunks, or uneven tire wear can point to worn suspension or steering components. We inspect the system so you can feel confident behind the wheel again.</p><h2>Small components. A big role in control.</h2><p>Shocks, struts, ball joints, control arms, and tie rods work together to keep your tires planted and your vehicle predictable. Worn components can affect handling and tire life. Addressing looseness or unusual noises early helps prevent extra wear and protects your ability to control the vehicle.</p><h2>How we can help</h2><ul><li>Shocks and struts</li><li>Ball joints and control arms</li><li>Tie rods and steering components</li><li>Ride quality and handling diagnosis</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Why does my car clunk over bumps?</summary><p>A clunk may come from several suspension or steering components. An inspection helps identify the actual cause before replacing parts.</p></details><details><summary>Will worn suspension damage my tires?</summary><p>It can contribute to uneven tire wear. We can inspect your suspension and recommend alignment or tire service as needed.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "steering.webp",
+    "image": "faqs.webp",
     "eyebrow": "A smoother ride starts here.",
     "parent": "auto-repair",
-    "keywords": "suspension steering shocks struts ball joints tie rods clunk bumpy vibration"
+    "keywords": "suspension steering shocks struts ball joints tie rods clunk bumpy vibration",
+    "imageAlt": "Technician inspecting a vehicle on a lift"
   },
   "oil-changes": {
     "title": "Oil Changes & Maintenance",
     "description": "Oil Changes & Maintenance in Weldon Spring and St. Charles, MO. Give your engine the care it needs with the correct oil, a quality filter, and routine fluid checks. We follow the recommendations for your vehicle and driving conditions.",
     "content": "<p class=\"lead\">Give your engine the care it needs with the correct oil, a quality filter, and routine fluid checks. We follow the recommendations for your vehicle and driving conditions.</p><h2>Why your oil-change interval matters</h2><p>Engine oil lubricates moving parts and helps manage heat. Over time it degrades and collects contaminants. Following your manufacturer’s interval helps protect the engine; frequent short trips, towing, or severe conditions may call for a different schedule.</p><h2>How we can help</h2><ul><li>Oil and filter changes</li><li>Manufacturer-recommended oil specifications</li><li>Fluid checks</li><li>Routine maintenance guidance</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>How often should I change my oil?</summary><p>Follow your owner’s manual and the oil-life monitor where fitted. The right interval depends on your vehicle, oil specification, and driving conditions.</p></details><details><summary>Is synthetic oil right for my vehicle?</summary><p>Some engines require synthetic oil. We can help you choose oil that meets your manufacturer’s specification.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "oil.webp",
+    "image": "service-workshop-placeholder.png",
     "eyebrow": "Fresh oil. A fresh start.",
     "parent": "auto-repair",
-    "keywords": "oil change filter synthetic fluids maintenance"
+    "keywords": "oil change filter synthetic fluids maintenance",
+    "imageAlt": "Mechanic inspecting a vehicle engine in a workshop — placeholder photograph"
   },
   "engine-diagnostics": {
     "title": "Engine Diagnostics & Repair",
     "description": "Engine Diagnostics & Repair in Weldon Spring and St. Charles, MO. A check-engine light doesn’t tell the whole story. Our diagnostic tools and experienced technicians help pinpoint the cause, from a sensor issue to a mechanical engine concern.",
     "content": "<p class=\"lead\">A check-engine light doesn’t tell the whole story. Our diagnostic tools and experienced technicians help pinpoint the cause, from a sensor issue to a mechanical engine concern.</p><h2>A warning light is the beginning of a diagnosis</h2><p>Reading a trouble code is only one step. We use inspections and testing to understand why the fault occurred, explain the findings, and recommend the appropriate repair. Addressing issues early can help prevent additional damage.</p><h2>How we can help</h2><ul><li>Check-engine light diagnosis</li><li>Engine performance testing</li><li>Sensor and drivability diagnosis</li><li>Engine repairs</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Can I drive with the check-engine light on?</summary><p>A steady light needs diagnosis. A flashing light, rough running, overheating, or loss of power may signal a serious problem: pull over safely and seek professional guidance.</p></details><details><summary>Why is my vehicle running rough?</summary><p>Ignition, fuel, air, and mechanical issues can cause rough running. Testing helps us identify the source.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "engine.webp",
+    "image": "service-workshop-placeholder.png",
     "eyebrow": "Get answers. Get moving.",
     "parent": "auto-repair",
-    "keywords": "engine check engine light diagnostics rough idle misfire warning sensor"
+    "keywords": "engine check engine light diagnostics rough idle misfire warning sensor",
+    "imageAlt": "Mechanic inspecting a vehicle engine in a workshop — placeholder photograph"
   },
   "heating-ac-repair": {
     "title": "Heating & A/C Repair",
     "description": "Heating & A/C Repair in Weldon Spring and St. Charles, MO. Missouri summers and winters ask a lot of your car. We diagnose weak air conditioning, poor heat, unusual odors, and airflow problems to help keep your cabin comfortable.",
     "content": "<p class=\"lead\">Missouri summers and winters ask a lot of your car. We diagnose weak air conditioning, poor heat, unusual odors, and airflow problems to help keep your cabin comfortable.</p><h2>More than comfort</h2><p>A working heating and air-conditioning system also helps clear your windshield. Poor airflow or a system that won’t defog deserves a check. We inspect for the underlying problem rather than assuming the system only needs refrigerant.</p><h2>How we can help</h2><ul><li>Air-conditioning diagnostics</li><li>Heating system inspection</li><li>Airflow and cabin comfort concerns</li><li>Leak and component diagnosis</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Why is my A/C blowing warm air?</summary><p>Leaks, electrical faults, or component problems can all be involved. Diagnosis helps identify what repair is needed.</p></details><details><summary>Why is my heater not getting warm?</summary><p>Coolant level, thermostat operation, or heater-system components may be involved. Have it inspected, especially if the engine temperature is abnormal.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "airconditioning-1.webp",
+    "image": "service-workshop-placeholder.png",
     "eyebrow": "Comfort in every season.",
     "parent": "auto-repair",
-    "keywords": "air conditioning ac a/c heater heating warm air cold defrost"
+    "keywords": "air conditioning ac a/c heater heating warm air cold defrost",
+    "imageAlt": "Mechanic inspecting a vehicle engine in a workshop — placeholder photograph"
   },
   "transmission-service": {
     "title": "Transmission Services",
     "description": "Transmission Services in Weldon Spring and St. Charles, MO. Slipping, delayed engagement, unusual shifts, or fluid leaks deserve a careful look. We provide transmission diagnostics, fluid and filter service, and repair or replacement when needed.",
     "content": "<p class=\"lead\">Slipping, delayed engagement, unusual shifts, or fluid leaks deserve a careful look. We provide transmission diagnostics, fluid and filter service, and repair or replacement when needed.</p><h2>Service suited to your vehicle</h2><p>Automatic and manual transmissions have different needs. Fluid type and service procedures matter. We follow the manufacturer’s guidance and assess symptoms before recommending service.</p><h2>How we can help</h2><ul><li>Automatic and manual transmission diagnosis</li><li>Fluid and filter services where appropriate</li><li>Leak inspection</li><li>Repair and replacement recommendations</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Should I ignore a small transmission leak?</summary><p>A leak can lead to a low fluid level and damage. Have it checked before it becomes a larger issue.</p></details><details><summary>When is transmission fluid due?</summary><p>Intervals and procedures vary. Your owner’s manual and our inspection can help determine the right service.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "transmission.webp",
+    "image": "faqs.webp",
     "eyebrow": "Keep every shift feeling right.",
     "parent": "auto-repair",
-    "keywords": "transmission shifting slipping fluid gearbox clutch"
+    "keywords": "transmission shifting slipping fluid gearbox clutch",
+    "imageAlt": "Technician inspecting a vehicle on a lift"
   },
   "exhaust-emissions": {
     "title": "Exhaust, Emissions & Safety Inspections",
     "description": "Exhaust, Emissions & Safety Inspections in Weldon Spring and St. Charles, MO. From mufflers and exhaust pipes to catalytic converters and oxygen sensors, we inspect exhaust and emissions concerns and provide safety-inspection services.",
     "content": "<p class=\"lead\">From mufflers and exhaust pipes to catalytic converters and oxygen sensors, we inspect exhaust and emissions concerns and provide safety-inspection services.</p><h2>Don’t put off an exhaust concern</h2><p>New exhaust noise, fumes, or emissions warning lights need attention. A damaged exhaust system can affect comfort and safety. If you smell exhaust in the cabin, stop safely and seek professional help.</p><h2>How we can help</h2><ul><li>Muffler and exhaust inspection</li><li>Catalytic converter and oxygen sensor diagnosis</li><li>Emissions concerns</li><li>Safety inspections; call for requirements and availability</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>What causes a loud exhaust?</summary><p>A leak, damaged pipe, or failing muffler may be responsible. An inspection locates the source.</p></details><details><summary>Do you offer safety inspections?</summary><p>Yes. Call the shop to confirm requirements, availability, and what to bring for your vehicle.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "maintenance.webp",
+    "image": "faqs.webp",
     "eyebrow": "A cleaner, quieter drive.",
     "parent": "auto-repair",
-    "keywords": "exhaust emissions inspection safety muffler catalytic converter oxygen sensor"
+    "keywords": "exhaust emissions inspection safety muffler catalytic converter oxygen sensor",
+    "imageAlt": "Technician inspecting a vehicle on a lift"
   },
   "electrical-battery": {
     "title": "Electrical & Battery Service",
     "description": "Electrical & Battery Service in Weldon Spring and St. Charles, MO. From a slow start to a warning light, we inspect your battery, starter, charging system, wiring, and electrical components to help restore reliable operation.",
     "content": "<p class=\"lead\">From a slow start to a warning light, we inspect your battery, starter, charging system, wiring, and electrical components to help restore reliable operation.</p><h2>Test before you replace</h2><p>A dead battery isn’t always the root problem. Testing helps distinguish a worn battery from a charging, connection, or electrical fault so you can make an informed repair decision.</p><h2>How we can help</h2><ul><li>Battery and connection inspection</li><li>Starter and alternator diagnosis</li><li>Charging-system testing</li><li>Electrical fault diagnosis</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Why does my car click but not start?</summary><p>A weak battery, poor connection, or starter issue may cause clicking. Testing can identify the problem.</p></details><details><summary>Should I use a larger fuse if one keeps blowing?</summary><p>No. Replace a fuse only with the same amperage. Repeated failures need professional diagnosis.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "electrical.webp",
+    "image": "service-workshop-placeholder.png",
     "eyebrow": "Reliable starts. Fewer surprises.",
     "parent": "auto-repair",
-    "keywords": "battery starter alternator electrical dead clicking no start charging fuse"
+    "keywords": "battery starter alternator electrical dead clicking no start charging fuse",
+    "imageAlt": "Mechanic inspecting a vehicle engine in a workshop — placeholder photograph"
   },
   "preventative-maintenance": {
     "title": "Preventative Maintenance",
     "description": "Preventative Maintenance in Weldon Spring and St. Charles, MO. Regular maintenance catches small concerns and helps your vehicle go the distance. We work with your manufacturer’s schedule and your driving needs.",
     "content": "<p class=\"lead\">Regular maintenance catches small concerns and helps your vehicle go the distance. We work with your manufacturer’s schedule and your driving needs.</p><h2>A plan for more good miles</h2><p>Fluids, filters, belts, hoses, and scheduled inspections all play a part in vehicle reliability. We explain what is due now and what to plan for next, with honest recommendations and no guesswork.</p><h2>How we can help</h2><ul><li>Scheduled vehicle maintenance</li><li>Belts, hoses, and fluid checks</li><li>Tune-ups and spark plugs</li><li>Manufacturer-recommended services</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Should I follow the timing-belt schedule?</summary><p>Yes. A failed timing belt can cause major engine damage on many vehicles. Follow your manufacturer’s replacement interval.</p></details><details><summary>Are all maintenance intervals the same?</summary><p>No. Intervals depend on the vehicle and operating conditions. We use your owner’s manual and service history to guide recommendations.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "preventativemaintenance.webp",
+    "image": "service-workshop-placeholder.png",
     "eyebrow": "Stay a little ahead of the unexpected.",
     "parent": "auto-repair",
-    "keywords": "preventive preventative maintenance timing belt spark plugs tune up fluids filters"
+    "keywords": "preventive preventative maintenance timing belt spark plugs tune up fluids filters",
+    "imageAlt": "Mechanic inspecting a vehicle engine in a workshop — placeholder photograph"
   },
   "wheel-alignment": {
     "title": "Wheel Alignment & Tire Care",
     "description": "Wheel Alignment & Tire Care in Weldon Spring and St. Charles, MO. Pulling, an off-center steering wheel, or uneven tire wear can signal an alignment concern. We offer alignments, balancing, rotations, flat repairs, and tire installation.",
     "content": "<p class=\"lead\">Pulling, an off-center steering wheel, or uneven tire wear can signal an alignment concern. We offer alignments, balancing, rotations, flat repairs, and tire installation.</p><h2>Protect your tires and your ride</h2><p>Correct alignment helps tires contact the road as intended. Balancing and rotation help manage vibration and wear. We inspect the tires and related components before recommending the right next step.</p><h2>How we can help</h2><ul><li>Wheel alignment</li><li>Tire mounting and balancing</li><li>Tire rotations</li><li>Flat-tire assessment and repair when safe</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>How often should tires be rotated?</summary><p>Follow your vehicle and tire manufacturer’s guidance. The existing shop guidance recommends approximately every 5,000 miles; some tire setups have different requirements.</p></details><details><summary>Can every puncture be repaired?</summary><p>No. Repairability depends on the location, size, and condition of the tire. Our technicians will assess it.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "tires.webp",
+    "image": "hero.webp",
     "eyebrow": "Find your straight and narrow.",
     "parent": "auto-repair",
-    "keywords": "alignment wheels tires rotation balancing flat puncture pulling"
+    "keywords": "alignment wheels tires rotation balancing flat puncture pulling",
+    "imageAlt": "Close-up of an all-terrain tire"
   },
   "wheels-lift-kits": {
     "title": "Wheels & Lift Kits",
     "description": "Wheels & Lift Kits in Weldon Spring and St. Charles, MO. Explore wheels and suspension upgrades with help from your neighborhood shop. We help you understand fitment, installation, and the effect an upgrade can have on your vehicle.",
     "content": "<p class=\"lead\">Explore wheels and suspension upgrades with help from your neighborhood shop. We help you understand fitment, installation, and the effect an upgrade can have on your vehicle.</p><h2>The right fit matters</h2><p>Wheel dimensions and suspension changes affect clearance, alignment, and handling. Talk with our team before choosing a kit so the installation can be planned for your vehicle and its intended use.</p><h2>How we can help</h2><ul><li>Wheel selection and fitment guidance</li><li>Wheel installation</li><li>Lift-kit and suspension upgrade consultation</li><li>Alignment and handling considerations</li></ul><h2>Questions? You’re in the right place.</h2><details><summary>Can you help choose wheels for my vehicle?</summary><p>Yes. Contact us with your vehicle details and the look or function you want.</p></details><details><summary>Will a lift change how my vehicle handles?</summary><p>It can. We discuss fitment and handling considerations before installation.</p></details><p>Relax in our comfortable waiting area and enjoy <strong>free guest Wi-Fi</strong> while we take care of your vehicle.</p>",
-    "image": "lifts.webp",
+    "image": "hero.webp",
     "eyebrow": "Make your ride your own.",
     "parent": "auto-repair",
-    "keywords": "wheels lift kits custom suspension upgrades"
+    "keywords": "wheels lift kits custom suspension upgrades",
+    "imageAlt": "Close-up of an all-terrain tire"
   },
   "tires": {
     "title": "Good tires. Great adventures.",
@@ -158,8 +169,9 @@
     "title": "Ask about our latest offers.",
     "description": "Contact Weldon Spring Automotive & Tire for current tire and auto service offers in Weldon Spring and St. Charles, MO.",
     "content": "<p class=\"lead\">Looking for current service or tire offers? Give us a call and we’ll tell you what’s available for your vehicle.</p><h2>Good advice comes standard</h2><p>We’ll explain your service options and provide an estimate before work begins. Contact the shop for current offers, eligibility, and details.</p>",
-    "image": "tires.webp",
-    "eyebrow": "A little more reason to stop by"
+    "image": "hero.webp",
+    "eyebrow": "A little more reason to stop by",
+    "imageAlt": "Close-up of an all-terrain tire"
   },
   "tips-advice": {
     "title": "A little know-how. A better drive.",

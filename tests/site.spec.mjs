@@ -37,11 +37,11 @@ test('Mobile menu, touch targets, and overflow',async({page})=>{
     if(width<900){await page.getByRole('button',{name:'Open navigation'}).click();await expect(page.locator('#primary-nav')).toBeVisible();await page.locator('#primary-nav').getByRole('link',{name:'Auto Repair',exact:true}).click();await expect(page).toHaveURL(/auto-repair/);}
   }
 });
-test('Unconfigured mail offers direct contact and protects the form',async({page,request})=>{
+test('Contact page omits the removed notice and protects the unavailable form',async({page,request})=>{
   await page.goto('/contact/');
-  await expect(page.getByText('Online messaging will be available soon.',{exact:false})).toBeVisible();
+  await expect(page.getByText('Online messaging will be available soon.',{exact:false})).toHaveCount(0);
+  await expect(page.getByText('For inquiries, please',{exact:false})).toHaveCount(0);
   await expect(page.getByRole('button',{name:'Send your message'})).toBeDisabled();
-  await expect(page.getByRole('link',{name:'email Michael'})).toHaveAttribute('href','mailto:michael@blueskymarketingstl.com');
   const response=await request.post('/api/inquiries',{form:{csrf:'invalid',name:'Test',email:'test@example.com',message:'Test inquiry',consent:'1'},maxRedirects:0});
   expect(response.headers().location).toContain('inquiry=expired');
 });
@@ -99,4 +99,21 @@ test('Blocked or broken booking script keeps the appointment fallback working',a
   await expect(page.getByRole('link',{name:'Continue to online booking'})).toHaveAttribute('href','https://aops.cc/jacobi-car-care-llc-dba-weldon-springs-auto-booking');
   await page.route('https://portal.autoops.com/portal-scripts.js',route=>route.fulfill({contentType:'application/javascript',body:'window.AutoOps={show:function(){throw new Error("Unavailable");}};'}));
   await page.goto('/');await page.locator('.nav-book').click();await expect(page).toHaveURL(/book/);
+});
+
+test('Home navigation, tire logos, and photo placeholders match the new content',async({page})=>{
+  await page.goto('/');
+  await expect(page.locator('#primary-nav').getByRole('link',{name:'Home',exact:true})).toHaveAttribute('href','/');
+  await expect(page.locator('#primary-nav').getByRole('link',{name:'Home',exact:true})).toHaveAttribute('aria-current','page');
+  const photos=await page.locator('.service-image img').evaluateAll(images=>images.map(image=>image.getAttribute('src')));
+  expect(photos).toHaveLength(6);expect(photos.every(src=>/service-workshop-placeholder|faqs|hero/.test(src))).toBeTruthy();
+  await page.goto('/tires/');
+  await expect(page.getByRole('heading',{name:'Tires from the names you know.'})).toBeVisible();
+  await expect(page.locator('.tire-brand-grid img')).toHaveCount(12);
+  for(const width of [360,768,1051,1150,1440]){
+    await page.setViewportSize({width,height:900});
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`overflow at ${width}`).toBeTruthy();
+  }
+  await page.setViewportSize({width:1440,height:1000});
+  await page.locator('#primary-nav').getByRole('link',{name:'Home',exact:true}).click();await expect(page).toHaveURL('/');
 });

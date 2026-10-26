@@ -14,3 +14,5 @@ Original assets: /wp-content/uploads/2025/05/ and /wp-content/uploads/2025/06/. 
 Visual references: original theme stylesheet uses red #ea1b20, charcoal, yellow #fcb217, and blue #2c4473; the new design emphasizes the logo's red and charcoal with warm neutral backgrounds.
 
 Content decisions: retained the service scope and practical business details; expanded service education; excluded pricing, outdated financing figures, and coupon artwork with dollar amounts; replaced universal maintenance intervals with manufacturer-specific advice. Free guest Wi-Fi and the temporary inquiry recipient are user-provided requirements.
+
+Service illustration replacements: the generated service-workshop-placeholder.png is a generic design placeholder and does not depict actual shop staff. Other photographic placeholders reuse faqs.webp (technician on a lift) and hero.webp (tire close-up). The 14 old service illustrations have been removed from the public assets. The tire-brand grid follows the 12 brands listed in the supplied Base44 reference.

@@ -20,8 +20,8 @@ test('Production-facing routes, SEO, search ranking, and real 404s',async t=>{
  const search=await(await fetch(base+'/?s=%3Cscript%3Eevil%3C%2Fscript%3E')).text();assert.ok(!search.includes('<script>evil</script>'));
  assert.match(await(await fetch(base+'/robots.txt')).text(),/Sitemap: https:\/\/weldonspringautoandtire.com\/sitemap.xml/);
 });
-test('Mail not configured is visible and does not pretend to submit',async t=>{
- const base=await server(t);const f=await form(base);const html=await(await fetch(base+'/contact/')).text();assert.match(html,/Online messaging will be available soon/);assert.match(html,/<fieldset disabled/);assert.match(f.headers.get('cache-control'),/no-store/);
+test('Unconfigured mail stays unavailable without the removed contact banner',async t=>{
+ const base=await server(t);const f=await form(base);const html=await(await fetch(base+'/contact/')).text();assert.doesNotMatch(html,/Online messaging will be available soon/);assert.match(html,/<fieldset disabled/);assert.match(f.headers.get('cache-control'),/no-store/);
  const fresh=await form(base);const r=await submit(base,fresh);assert.match(r.headers.get('location'),/inquiry=unavailable/);
  assert.equal(createMailer({}).configured,false);
 });

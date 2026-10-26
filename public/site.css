@@ -61,3 +61,20 @@ main p.form-help{font-size:15px!important;line-height:1.7}
  .closing-cta p:not(.eyebrow){font-size:17px}
  .sidebar-panel .wifi-badge{font-size:14px}
 }
+
+/* Photographic service placeholders replace the legacy illustrated service icons. */
+.service-image{display:block;height:210px;background:#e7e5df}
+.service-image img{width:100%;height:100%;object-fit:cover;object-position:center;filter:none;mix-blend-mode:normal}
+.service-image:after{display:block;inset:40% 0 0;background:linear-gradient(transparent,#0008)}
+.service-number{top:auto;bottom:14px;color:#fff;text-shadow:0 1px 3px #0008}
+.sidebar-photo img{object-fit:cover;object-position:center}
+.tire-brands-section{padding-block:76px;background:var(--paper);border-bottom:1px solid var(--line)}
+.tire-brands-heading{text-align:center;max-width:760px;margin:0 auto 38px}
+.tire-brands-heading h2{margin-bottom:20px}
+.tire-brands-heading>p:not(.eyebrow){color:var(--muted)}
+.tire-brand-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.tire-brand-card{display:grid;place-items:center;min-height:130px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:12px;transition:border-color .2s}
+.tire-brand-card:hover{border-color:var(--red)}
+.tire-brand-card img{width:100%;max-width:200px;height:70px;object-fit:contain}
+@media(max-width:1050px){.tire-brand-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.service-image{height:220px}.tire-brands-section{padding-block:50px}.tire-brand-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tire-brand-card{padding:18px;min-height:105px}.tire-brand-card img{height:55px}.tire-brands-heading h2{font-size:32px}}
