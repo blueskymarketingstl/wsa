@@ -1,0 +1,18 @@
+{
+  "name": "weldon-spring-wordpress",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node tools/dev.mjs",
+    "build": "python3 tools/package.py",
+    "test": "playwright test",
+    "lint": "node tools/lint.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@php-wasm/node": "3.1.61",
+    "@playwright/test": "1.64.1",
+    "@wp-playground/cli": "3.1.61",
+    "@wp-playground/wordpress": "3.1.61"
+  }
+}
