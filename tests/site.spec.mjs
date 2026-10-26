@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
-const definitions=JSON.parse(fs.readFileSync('theme/weldon-spring/inc/pages.json','utf8'));
+const definitions=JSON.parse(fs.readFileSync('content/pages.json','utf8'));
 test('Every published page renders with working local assets and SEO metadata',async({page,request})=>{
   for(const [slug,def]of Object.entries(definitions)){
     const path=slug==='home'?'/':`/${def.parent?def.parent+'/':''}${slug}/`;
@@ -36,17 +36,13 @@ test('Mobile menu, touch targets, and overflow',async({page})=>{
     if(width<900){await page.getByRole('button',{name:'Open navigation'}).click();await expect(page.locator('#primary-nav')).toBeVisible();await page.locator('#primary-nav').getByRole('link',{name:'Auto Repair',exact:true}).click();await expect(page).toHaveURL(/auto-repair/);}
   }
 });
-test('Contact validation and real mail-failure response',async({page,request})=>{
+test('Unconfigured mail offers direct contact and protects the form',async({page,request})=>{
   await page.goto('/contact/');
-  await page.getByRole('button',{name:'Send your message'}).click();
-  expect(await page.locator('input[name=name]').evaluate(e=>e.validity.valueMissing)).toBeTruthy();
-  const nonce=await page.locator('[name=wsa_nonce]').inputValue();
-  const forged=await request.post('/wp-admin/admin-post.php',{form:{action:'wsa_inquiry',wsa_nonce:'invalid',name:'Test',email:'test@example.com',message:'Test message',consent:'1'},maxRedirects:0});
-  expect(forged.headers().location).toContain('inquiry=expired');
-  const invalid=await request.post('/wp-admin/admin-post.php',{form:{action:'wsa_inquiry',wsa_nonce:nonce,name:'Test',email:'invalid',message:'Test message',consent:'1'},maxRedirects:0});expect(invalid.headers().location).toContain('inquiry=invalid');
-  await page.getByLabel('Your name').fill('Website Test');await page.getByLabel('Email address').fill('test@example.com');await page.getByLabel('How can we help?').fill('This is a local test inquiry.');await page.getByRole('checkbox').check();
-  await page.getByRole('button',{name:'Send your message'}).click();
-  await expect(page.locator('#inquiry-result')).toContainText('could not be submitted');
+  await expect(page.getByText('Online messaging will be available soon.',{exact:false})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Send your message'})).toBeDisabled();
+  await expect(page.getByRole('link',{name:'email Michael'})).toHaveAttribute('href','mailto:michael@blueskymarketingstl.com');
+  const response=await request.post('/api/inquiries',{form:{csrf:'invalid',name:'Test',email:'test@example.com',message:'Test inquiry',consent:'1'},maxRedirects:0});
+  expect(response.headers().location).toContain('inquiry=expired');
 });
 test('Booking uses the existing provider and schema describes service without prices',async({page})=>{
   await page.goto('/book/');await expect(page.getByRole('link',{name:'Continue to online booking'})).toHaveAttribute('href','https://aops.cc/jacobi-car-care-llc-dba-weldon-springs-auto-booking');
@@ -68,22 +64,4 @@ test('Capture desktop and mobile review images',async({page})=>{
   fs.mkdirSync('dist/screenshots',{recursive:true});
   await page.setViewportSize({width:1440,height:1000});await page.goto('/');await page.locator('img').evaluateAll(async imgs=>{for(const img of imgs)img.loading='eager';await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));});await page.screenshot({animations:'disabled',path:'dist/screenshots/home-desktop.png',fullPage:true});await page.screenshot({animations:'disabled',path:'dist/screenshots/home-desktop-first-screen.png'});
   await page.setViewportSize({width:390,height:844});await page.goto('/');await page.locator('img').evaluateAll(async imgs=>{for(const img of imgs)img.loading='eager';await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));});await page.screenshot({animations:'disabled',path:'dist/screenshots/home-mobile.png',fullPage:true});await page.screenshot({animations:'disabled',path:'dist/screenshots/home-mobile-first-screen.png'});
-});
-
-test('Inquiry success hands the message to WordPress mail and limits repeat submissions',async({page,request})=>{
-  const stamp=Date.now();
-  const plugin=`.runtime/wordpress-core/wp-content/mu-plugins/wsa-test-mail-${stamp}.php`;
-  const captured=`.runtime/wordpress-core/wp-content/wsa-test-mail-${stamp}.json`;
-  fs.writeFileSync(plugin,`<?php add_filter('pre_wp_mail', function($result,$atts){file_put_contents('/wordpress/wp-content/wsa-test-mail-${stamp}.json',json_encode($atts));return true;},20,2);`);
-  try{
-    await page.goto('/contact/');
-    const nonce=await page.locator('[name=wsa_nonce]').inputValue();
-    const form={action:'wsa_inquiry',wsa_nonce:nonce,name:'Local Test Customer',email:'test@example.com',phone:'555-0100',vehicle:'Test vehicle',message:'Test inquiry for brake inspection.',consent:'1'};
-    const response=await request.post('/wp-admin/admin-post.php',{form,maxRedirects:0});
-    expect(response.status()).toBe(303);expect(response.headers().location).toContain('inquiry=sent');
-    const mail=JSON.parse(fs.readFileSync(captured,'utf8'));
-    expect(mail.to).toBe('michael@blueskymarketingstl.com');expect(mail.message).toContain('Test inquiry for brake inspection.');expect(mail.headers).toContain('Reply-To: test@example.com');
-    const repeated=await request.post('/wp-admin/admin-post.php',{form,maxRedirects:0});expect(repeated.headers().location).toContain('inquiry=limited');
-    await page.goto('/contact/?inquiry=sent');await expect(page.locator('#inquiry-result')).toContainText('does not confirm an appointment');
-  }finally{fs.rmSync(plugin,{force:true});fs.rmSync(captured,{force:true});}
 });

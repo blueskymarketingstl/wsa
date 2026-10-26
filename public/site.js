@@ -28,7 +28,7 @@
       controller = new AbortController();
       results.textContent = 'Looking for a good match…';
       try {
-        const response = await fetch(`${wsaSite.search}?q=${encodeURIComponent(q)}`, {signal:controller.signal});
+        const response = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {signal:controller.signal});
         if(!response.ok) throw new Error('Search unavailable');
         const items = await response.json();
         if(input.value.trim() !== q) return;
@@ -45,5 +45,5 @@
   });
   const notice = document.querySelector('#inquiry-result');
   if(notice) notice.focus({preventScroll:false});
-  // Cache plugins must exclude the contact page so its WordPress nonce stays fresh.
+
 })();

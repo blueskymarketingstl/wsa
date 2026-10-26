@@ -1,18 +1,26 @@
 {
-  "name": "weldon-spring-wordpress",
-  "version": "1.0.0",
+  "name": "weldon-spring-auto-and-tire",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "node tools/dev.mjs",
-    "build": "python3 tools/package.py",
-    "test": "playwright test",
-    "lint": "node tools/lint.mjs"
+    "build": "node tools/build.mjs",
+    "start": "node dist/server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/server.test.mjs && playwright test",
+    "test:server": "node --test tests/server.test.mjs",
+    "lint": "node --check server.js && node --check app.js && node --check lib/site.js && node --check lib/contact.js && node --check tools/build.mjs"
+  },
+  "dependencies": {
+    "ejs": "7.0.2",
+    "express": "5.3.0",
+    "nodemailer": "10.2.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.1",
-    "@php-wasm/node": "3.1.61",
-    "@playwright/test": "1.64.1",
-    "@wp-playground/cli": "3.1.61",
-    "@wp-playground/wordpress": "3.1.61"
+    "@playwright/test": "1.64.1"
   }
 }

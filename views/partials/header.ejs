@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= title %></title><meta name="description" content="<%= description %>"><link rel="canonical" href="<%= canonical %>">
+<meta name="robots" content="<%= noindex ? 'noindex, nofollow' : 'index, follow' %>">
+<meta property="og:title" content="<%= title %>"><meta property="og:description" content="<%= description %>"><meta property="og:url" content="<%= canonical %>"><meta property="og:type" content="website"><meta property="og:image" content="<%= socialImage %>"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/site.css?v=<%= version %>"><script src="/site.js?v=<%= version %>" defer></script><script type="application/ld+json"><%- schema %></script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="topbar"><div class="container topbar-inner"><a href="https://www.google.com/maps/search/?api=1&amp;query=818+OFallon+Rd+St+Charles+MO+63304"><%- icon('pin') %> 818 O’Fallon Rd · St. Charles, MO</a><span><%- icon('clock') %> Mon–Fri, 8am–5pm</span><span class="top-wifi"><%- icon('wifi') %> Free guest Wi-Fi</span><a href="tel:16364986600"><%- icon('phone') %> (636) 498-6600</a></div></div>
+<header class="site-header"><div class="container nav-inner"><a class="brand" href="/" aria-label="Weldon Spring Automotive and Tire home"><%- image('Weldon-Spring-Auto-and-Tire-Logo.png', 'Weldon Spring Automotive & Tire', '', true) %></a>
+<nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+<% for (const [path,label] of Object.entries(navigation)) { %><a <%- currentPath === url(path) ? 'aria-current="page"' : '' %> href="<%= url(path) %>"><%= label %></a><% } %>
+</nav><div class="nav-actions"><button class="icon-button search-toggle" aria-label="Search the website" aria-haspopup="dialog"><%- icon('search') %></button><%- button('Book a visit', 'book/', 'nav-book') %><button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button></div></div></header>
+<dialog id="search-dialog" aria-labelledby="search-title"><div class="search-heading"><h2 id="search-title">What can we help with?</h2><button class="icon-button search-close" aria-label="Close search">×</button></div><form role="search" method="get" action="/"><label class="screen-reader-text" for="site-search">Search services and car care</label><div class="search-field"><%- icon('search') %><input id="site-search" name="s" type="search" placeholder="Try brakes, tires, or a check-engine light…" autocomplete="off"><button type="submit" class="button">Search</button></div></form><p class="search-hint">Find a service, understand a symptom, or get to know our shop.</p><div id="search-results" aria-live="polite"></div></dialog>

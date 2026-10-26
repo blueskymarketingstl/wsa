@@ -1,0 +1,13 @@
+<% const messages={sent:'Thanks for reaching out! Your inquiry was submitted. Our team will follow up during business hours. This does not confirm an appointment.',failed:'Your message could not be submitted. Please call (636) 498-6600 so we can help.',unavailable:'Online inquiries are temporarily unavailable. Please call (636) 498-6600 or email michael@blueskymarketingstl.com.',invalid:'Please check your details, enter a message of at least 10 characters, and agree to the privacy policy.',expired:'This form has expired. Refresh this page and try again.',limited:'Please wait a minute before sending another inquiry. For help now, call (636) 498-6600.'}; %>
+<% if(messages[inquiry]){ %><div id="inquiry-result" class="form-notice" role="status" tabindex="-1"><%= messages[inquiry] %></div><% } %>
+<% if(!mailConfigured){ %><div class="form-notice" role="status">For inquiries, please <a href="mailto:michael@blueskymarketingstl.com">email Michael</a> or <a href="tel:16364986600">call (636) 498-6600</a>. Online messaging will be available soon.</div><% } %>
+<form class="inquiry-form" method="post" action="/api/inquiries">
+<input type="hidden" name="csrf" value="<%= csrfToken %>">
+<fieldset <%= mailConfigured?'':'disabled' %>><legend class="screen-reader-text">Your inquiry</legend>
+<div class="form-grid"><label>Your name <span>*</span><input name="name" autocomplete="name" maxlength="120" required></label><label>Email address <span>*</span><input type="email" name="email" autocomplete="email" maxlength="254" required></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" maxlength="40"></label><label>Vehicle <span class="optional">(optional)</span><input name="vehicle" placeholder="Year, make, and model" maxlength="160"></label></div>
+<label>How can we help? <span>*</span><textarea name="message" rows="5" minlength="10" maxlength="5000" required placeholder="Tell us what’s going on with your vehicle."></textarea></label>
+<div class="honeypot" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<label class="consent"><input type="checkbox" name="consent" value="1" required><span>I agree to the <a href="/privacy/">privacy policy</a> and may be contacted about this inquiry.</span></label>
+<button class="button" type="submit">Send your message <%- icon('arrow') %></button></fieldset>
+<p class="form-help">An inquiry is not an appointment confirmation. Please don’t include payment details or sensitive information.</p>
+</form>
