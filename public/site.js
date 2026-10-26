@@ -43,6 +43,20 @@
       } catch(error) { if(error.name !== 'AbortError') results.textContent='Press Search to see results, or call (636) 498-6600 for help.'; }
     }, 250);
   });
+  // Preserve real link destinations until the vendor portal is available.
+  // Delegation also covers future appointment links and clicks on nested SVG icons.
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a[href="/book/"], a[data-book-appointment]');
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.hasAttribute('download') || link.target === '_blank') return;
+    if (typeof window.AutoOps?.show !== 'function') return;
+    try {
+      window.AutoOps.show();
+      event.preventDefault();
+      closeMenu();
+    } catch {
+      // Let the browser follow the original booking URL when the portal cannot open.
+    }
+  });
   const notice = document.querySelector('#inquiry-result');
   if(notice) notice.focus({preventScroll:false});
 

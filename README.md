@@ -45,13 +45,13 @@ The form has server validation, short-lived signed CSRF protection, a same-site 
 
 `.env.example` lists the settings. Local `.env` files are ignored by Git and are not loaded automatically; use Node 22's `--env-file` or exported variables when developing.
 
-## STEER booking
+## STEER / AutoOps booking
 
-Until the embed is supplied, `/book/` uses the existing link:
+The shop-supplied AutoOps portal script is the last element inside `<body>` on every page. Its browser-side configuration is in `content/autoops.json`: public widget key, red loading color `eb1b23`, and the requested Google Analytics integration enabled. The privacy page describes this integration.
 
-`https://aops.cc/jacobi-car-care-llc-dba-weldon-springs-auto-booking`
+Appointment links in the header, homepage, footer, service sidebar, booking page, and mobile bar call `AutoOps.show()` when the vendor script is ready. Links retain their original destinations: if the script is slow, blocked, or fails, visitors can still reach `/book/` and the original external appointment link. Modifier-clicks and opening links in a new tab retain normal browser behavior.
 
-When supplied, add **only the trusted STEER snippet** to `content/steer-embed.html` and redeploy. The booking page will render that repository-controlled file in place of the fallback card. There is no public endpoint that accepts executable embed code. No live booking has been submitted or confirmed as part of testing.
+Browser tests stub the vendor script to verify portal calls and fallback behavior; they never create a real appointment. Verify the real portal and available appointment times on the deployed site before launch. The previous `content/steer-embed.html` option remains available for a separately supplied booking-page embed, but is not needed for the global AutoOps script.
 
 ## Development
 
@@ -90,6 +90,6 @@ The browser tests start their own production server on port 9402 and use system 
 - Service detail pages live under `/auto-repair/`.
 - Server-rendered titles, descriptions, canonicals, social previews, and AutoRepair/Service structured data are present without client JavaScript. XML sitemap: `/sitemap.xml`; `/wp-sitemap.xml` is retained as an alias. Staging indexing is controlled by `NOINDEX=true`.
 
-Before final launch, confirm shop facts and warranty terms, install the STEER code, verify actual inquiry delivery, map the final domain, preserve URL redirects, approve indexing, and submit the sitemap through the owner's Search Console account. The privacy policy identifies the temporary inquiry recipient; update both when it changes.
+Before final launch, confirm shop facts and warranty terms, verify the live STEER portal and actual inquiry delivery, map the final domain, preserve URL redirects, approve indexing, and submit the sitemap through the owner's Search Console account. The privacy policy identifies the temporary inquiry recipient; update both when it changes.
 
 Original reference content and source notes are in `research/`. Original logo and photos were reused with the user's authorization. Third-party brand marks remain their owners' property.
